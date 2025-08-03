@@ -3,6 +3,8 @@ body {
   font-family: 'Arial', sans-serif;
   background: #eaeaea;
   color: #333;
+  cursor: url('https://www.rw-designer.com/cursor-view/80838.png') 16 16, auto;
+
 }
 
 .container {
@@ -73,7 +75,4 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-body {
-  cursor: url('img/haltere-cursor.png') 16 16, auto;
 }
