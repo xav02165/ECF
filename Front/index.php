@@ -26,9 +26,12 @@
     <img src="image/profil.jpg" alt="Photo coach" class="responsive-img" />
     <div>
       <h2>Coaching Musculation</h2>
-      <p>Spécialiste en renforcement physique et préparation de compétiteurs. Programmes sur-mesure et suivi intensif.</p>
+      <p>Spécialiste en renforcement physique et préparation de compétiteurs. Profites de plus de 30ans d'experiences!.</p>
     </div>
   </section>
+
+<div class="overlay-container">
+  <section class="ta-section">
 
   <section id="services" class="container grid">
     <div><h3>Coaching personnalisé</h3><p>Plans adaptés à ton niveau et à tes objectifs.</p></div>
@@ -70,5 +73,9 @@
     </div>
     <p>&copy; DXProCoaching 2025</p>
   </footer>
+
+  </section>
+</div>
+
 </body>
 </html>
