@@ -1,180 +1,36 @@
+/* ---------------------------------------------------
+   🧱 BASE GÉNÉRALE DU SITE
+----------------------------------------------------- */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background: #eaeaea;
   color: #333;
   cursor: url('haltere_cursor.png'), auto;
-  background-image: url('image/salle\ de\ sport.jpg') no repeat;
-}
-.overlay-container {
-  position: relative;
-  background-image: url("image/salle\ de\ sport.jpg");
+  background-image: url('image/salle de sport.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  padding: 60px 20px;
 }
 
-/* L'overlay sombre */
-.overlay-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* filtre sombre semi-transparent */
-  z-index: 1;
+.responsive-img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Le contenu passe au-dessus */
-.ta-section {
-  position: relative;
-  z-index: 2;
-  color: #fff; /* texte en blanc pour contraste */
-}
-
-
-
-
-/* Conteneur principal */
+/* ---------------------------------------------------
+   📦 CONTENEUR PRINCIPAL
+----------------------------------------------------- */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Galerie d’images */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Images responsives et stylées */
-.gallery img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-/* Effet de zoom au survol */
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* Style des légendes */
-.gallery figcaption {
-  margin-top: 8px;
-  font-size: 0.9em;
-  color: #666;
-}
-
-#presentation {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  padding: 30px;
-  background-color: #f5f5f5;
-  border: 2px solid #ccc;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Image stylée */
-#presentation img {
-  max-width: 280px;
-  height: auto;
-  border-radius: 12px;
-  border: 3px solid #333;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Texte avec belle hiérarchie */
-#presentation div {
-  flex: 1;
-  min-width: 250px;
-}
-
-#presentation h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #222;
-  border-bottom: 2px solid #888;
-  padding-bottom: 5px;
-}
-
-#presentation p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-}
-
-
-/* Section Contact : déjà bien responsive grâce au flex en colonne */
-
-form {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto 30px auto;
-  padding: 0 15px;
-}
-
-/* Responsive Text Inputs */
-input,
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Responsive pour le bloc de texte (adresse/téléphone) */
-#contact p {
-  padding: 0 15px;
-}
-
-/* Footer : structure et centrage sur petits écrans */
-footer {
-  padding: 30px 15px;
-  text-align: center;
-}
-
-/* Responsive Social Links */
-footer .social {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* Media Query pour affiner sur mobiles */
-@media screen and (max-width: 600px) {
-  #contact {
-    padding: 20px;
-  }
-
-  #contact h2 {
-    font-size: 24px;
-  }
-
-  footer a {
-    display: inline-block;
-    margin: 5px 0;
-  }
-}
-
-
-
-
+/* ---------------------------------------------------
+   📋 HEADER & MENU BURGER
+----------------------------------------------------- */
 header {
   background: #2c2c2c;
   color: white;
@@ -204,37 +60,357 @@ header {
   cursor: pointer;
 }
 
+/* ✅ Cacher la checkbox du menu burger */
+#menu-toggle {
+  display: none;
+}
+
+/* 👇 Afficher le menu si checkbox cochée */
 #menu-toggle:checked + .menu-icon + .menu {
   display: flex;
 }
 
+/* 💻 Menu horizontal sur écran large */
 @media (min-width: 768px) {
-  .menu { display: flex; flex-direction: row; gap: 20px; }
-  .menu-icon { display: none; }
-}
-
-.grid {
-  display: grid;
-  gap: 20px;
-}
-
-@media (min-width: 1200px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .menu-icon {
+    display: none;
   }
 }
 
-.responsive-img {
-  max-width: 100%;
+/* ---------------------------------------------------
+   🔒 BOUTON ADMIN EN HAUT À DROITE
+----------------------------------------------------- */
+.full-page-login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #222, #444);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+
+.admin-button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background-color: #111;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+.admin-button:hover {
+  background-color: #333;
+}
+
+/* ---------------------------------------------------
+   📸 SECTION PRÉSENTATION
+----------------------------------------------------- */
+#presentation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 30px;
+  background-color: #f5f5f5;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#presentation img {
+  max-width: 280px;
   height: auto;
+  border-radius: 12px;
+  border: 3px solid #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.gallery figure {
-  margin: 0;
+#presentation div {
+  flex: 1;
+  min-width: 250px;
 }
 
+#presentation h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #222;
+  border-bottom: 2px solid #888;
+  padding-bottom: 5px;
+}
 
-.centrage {
-  max-width: 500px;
+#presentation p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ---------------------------------------------------
+   🏋️ SECTION SERVICES (cartes prestation)
+----------------------------------------------------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.service-box {
+  border: 2px solid #222;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.service-box h3 {
+  font-size: 1.5em;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.service-box p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ---------------------------------------------------
+   🖼️ GALERIE INTERACTIVE
+----------------------------------------------------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
   margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.gallery figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 0;
+  cursor: pointer;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery figure:hover img {
+  transform: scale(1.05);
+}
+
+.gallery figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 12px 12px;
+  pointer-events: none;
+}
+
+.gallery figure:hover figcaption {
+  opacity: 1;
+}
+
+
+/* 🖥️ Fixer 3 colonnes sur les grands écrans */
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* ---------------------------------------------------
+   🎭 SECTION AVEC IMAGE DE FOND + FILTRE SOMBRE
+----------------------------------------------------- */
+.overlay-container {
+  position: relative;
+  background-image: url("image/salle de sport.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 60px 20px;
+}
+
+.overlay-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.ta-section {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/* ---------------------------------------------------
+   📬 SECTION CONTACT
+----------------------------------------------------- */
+.centrage {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+#contact {
+  padding: 40px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+#contact h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+  border-bottom: 2px solid #888;
+  padding-bottom: 10px;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+#contact p {
+  padding: 0 15px;
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+
+/* ---------------------------------------------------
+   ⚓ FOOTER
+----------------------------------------------------- */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 15px;
+  font-size: 0.9em;
+  border-top: 2px solid #555;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ddd;
+}
+
+/* ---------------------------------------------------
+   🧹 STYLES GLOBAUX & UTILITAIRES
+----------------------------------------------------- */
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
 }
