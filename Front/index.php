@@ -37,12 +37,12 @@
   </section>
 
   <section id="galerie" class="container grid gallery">
-    <figure><img src="img/realisation1.jpg" alt="Photo 1"><figcaption>Transformation 12 semaines</figcaption></figure>
-    <figure><img src="img/realisation2.jpg" alt="Photo 2"><figcaption>Compétition régionale</figcaption></figure>
-    <figure><img src="img/realisation3.jpg" alt="Photo 3"><figcaption>Travail postural</figcaption></figure>
-    <figure><img src="img/realisation4.jpg" alt="Photo 4"><figcaption>Client avant/après</figcaption></figure>
-    <figure><img src="img/realisation5.jpg" alt="Photo 5"><figcaption>Renforcement explosif</figcaption></figure>
-    <figure><img src="img/realisation6.jpg" alt="Photo 6"><figcaption>Backstage compétition</figcaption></figure>
+    <figure><img src="image/bilan.jpg" height="200px" width="200px" alt="Photo 1"><figcaption>Transformation 12 semaines</figcaption></figure>
+    <figure><img src="image/competition.jpg" height="200px" width="200px" alt="Photo 2"><figcaption>Compétition nationale</figcaption></figure>
+    <figure><img src="image/decharge.jpg" height="200px" width="200px" alt="Photo 3"><figcaption>Travail postural</figcaption></figure>
+    <figure><img src="image/lecoach.jpg" height="200px" width="200px" alt="Photo 4"><figcaption>Client avant/après</figcaption></figure>
+    <figure><img src="image/competitionaffiche.jpg" height="200px" width="200px" alt="Photo 5"><figcaption>Féderation naturelle</figcaption></figure>
+    <figure><img src="image/nutrition.jpg" height="200px" width="200px" alt="Photo 6"><figcaption>Nutrition</figcaption></figure>
   </section>
 
 
