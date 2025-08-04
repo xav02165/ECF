@@ -3,9 +3,10 @@ body {
   font-family: 'Arial', sans-serif;
   background: #eaeaea;
   color: #333;
-  cursor: url('https://www.rw-designer.com/cursor-view/80838.png') 16 16, auto;
-
+  cursor: url('haltere_cursor.png'), auto;
 }
+
+
 
 .container {
   padding: 20px;
@@ -75,4 +76,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 600px;         /* largeur maximale du formulaire */
+  margin: 0 auto;           /* centre horizontalement */
+  padding: 20px;            /* petit espace intérieur */
+  background-color: #fff;   /* fond blanc si tu veux le détacher du fond */
+  border-radius: 8px;       /* angles arrondis pour le style */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ombre douce */
 }
