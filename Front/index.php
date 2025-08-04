@@ -45,16 +45,23 @@
     <figure><img src="img/realisation6.jpg" alt="Photo 6"><figcaption>Backstage compétition</figcaption></figure>
   </section>
 
+
+<div class="centrage">
   <section id="contact" class="container">
     <h2>Contact</h2>
+
+    
     <form>
       <input type="text" placeholder="Nom" required />
       <input type="email" placeholder="Email" required />
       <textarea placeholder="Message" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
+    
+
     <p>📍 123 Rue du Muscle, Lille<br>📞 06 12 34 56 78</p>
   </section>
+</div>
 
   <footer class="container">
     <p><a href="#">Mentions légales</a></p>

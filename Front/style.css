@@ -57,7 +57,7 @@ header {
   gap: 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -76,10 +76,14 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 600px;         /* largeur maximale du formulaire */
-  margin: 0 auto;           /* centre horizontalement */
-  padding: 20px;            /* petit espace intérieur */
-  background-color: #fff;   /* fond blanc si tu veux le détacher du fond */
-  border-radius: 8px;       /* angles arrondis pour le style */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ombre douce */
+  max-width: 500px;         
+  margin: 0 auto;           
+  padding: 20px;            
+  background-color: #fff;   
+  border-radius: 8px;       
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+.centrage {
+  max-width: 500px;
+  margin: 0 auto;
 }
