@@ -23,7 +23,7 @@
   </header>
 
   <section id="presentation" class="container">
-    <img src="img/presentation.jpg" alt="Photo coach" class="responsive-img" />
+    <img src="image/profil.jpg" alt="Photo coach" class="responsive-img" />
     <div>
       <h2>Coaching Musculation</h2>
       <p>Spécialiste en renforcement physique et préparation de compétiteurs. Programmes sur-mesure et suivi intensif.</p>
