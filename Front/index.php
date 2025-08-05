@@ -27,7 +27,7 @@
 
    <!-- Panneau de connexion -->
 <div id="admin-login-container" class="full-page-login" style="display: none;">
-  <form class="admin-login-form" action="admin-panel.html" method="post">
+  <form class="admin-login-form" action="admin-login.php" method="post">
     <h2>Accès Administrateur</h2>
     <input type="text" placeholder="Identifiant" name="username" required />
     <input type="password" placeholder="Mot de passe" name="password" required />
