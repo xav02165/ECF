@@ -66,18 +66,23 @@ $presentation = $stmt->fetch();
   ?>
 </section>
 
+<section id="galerie" class="container grid gallery">
+  <?php
+  require 'db.php';
+  $stmt = $conn->query("SELECT * FROM galerie");
+  while ($g = $stmt->fetch()) {
+    echo '<figure>';
+    echo '<img src="' . htmlspecialchars($g['image']) . '" height="200px" width="200px" alt="Image galerie">';
+    echo '<figcaption>' . htmlspecialchars($g['commentaire']) . '</figcaption>';
+    echo '</figure>';
+  }
+  ?>
+</section>
 
 
 
 
-  <section id="galerie" class="container grid gallery">
-    <figure><img src="image/bilan.jpg" height="200px" width="200px" alt="Photo 1"><figcaption>Analyse des progrès physiques après 12 semaines.</figcaption></figure>
-    <figure><img src="image/competition.jpg" height="200px" width="200px" alt="Photo 2"><figcaption>Championnat de France.</figcaption></figure>
-    <figure><img src="image/decharge.jpg" height="200px" width="200px" alt="Photo 3"><figcaption>Diétetique calibrées.</figcaption></figure>
-    <figure><img src="image/lecoach.jpg" height="200px" width="200px" alt="Photo 4"><figcaption>Compétition : intensité et dépassement de soi.</figcaption></figure>
-    <figure><img src="image/competitionaffiche.jpg" height="200px" width="200px" alt="Photo 5"><figcaption>Fédération naturelle.</figcaption></figure>
-    <figure><img src="image/nutrition.jpg" height="200px" width="200px" alt="Photo 6"><figcaption>Conseil et suivi diététique.</figcaption></figure>
-  </section>
+  
 
 
 <div class="centrage">

@@ -7,6 +7,10 @@ if (!isset($_SESSION['admin'])) {
 require 'db.php';
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,14 +112,13 @@ require 'db.php';
   </style>
 </head>
 <body>
-  
+
 <div style="position: absolute; top: 20px; right: 20px;">
   <a href="index.php" style="text-decoration: none; background: #007bff; color: white; padding: 8px 12px; border-radius: 5px;">
     ⬅️ Retour sur le site
   </a>
-</div>
 
-
+  </div>
 
   <div class="container">
     <h2>Bienvenue Administrateur</h2>
@@ -135,6 +138,7 @@ require 'db.php';
     <form method="post">
       <input type="password" name="new_pass" placeholder="Nouveau mot de passe" required><br>
       <button type="submit" name="change_pass">Modifier le mot de passe</button>
+
     </form>
 
     <?php
@@ -176,11 +180,16 @@ require 'db.php';
 
     <div class="link-button">
       <a href="admin-dashboard.php?page=presentation">📝 Modifier la présentation</a>
-    </div><br><br>
+    </div><br>
 
     <div class="link-button">
       <a href="admin-dashboard.php?page=prestations">Gérer les prestations</a>
-    </div>
+    </div><br>
+
+    <div class="link-button">
+      <a href="admin-dashboard.php?page=galerie">Gérer la galerie</a>
+      </div>
+
 
 
     <?php
@@ -194,8 +203,22 @@ require 'db.php';
     if ($page === 'prestations') {
     include 'manage-prestations.php';
     }
-
     ?>
+    <?php
+    if ($page === 'galerie') {
+  include 'manage-galerie.php';
+}
+?>
+
+<form action="upload.php" method="POST" enctype="multipart/form-data" style="margin-bottom: 40px;">
+  <label for="image">Choisir une image :</label><br>
+  <input type="file" name="image" accept="image/*" required><br><br>
+
+  <label for="commentaire">Commentaire :</label><br>
+  <textarea name="commentaire" rows="3" cols="40" required></textarea><br><br>
+
+  <button type="submit">Envoyer</button>
+</form>
 
   </div>
 </body>

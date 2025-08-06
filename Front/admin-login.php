@@ -11,13 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->execute([$username]);
   $admin = $stmt->fetch();
 
-  if ($admin && $password === $admin['Password_hash']) {
- 
-    $_SESSION['admin'] = $admin['ID_admin'];
-    header("Location: admin-dashboard.php"); // Redirige vers le panneau de contrôle
-    exit();
-  } else {
-    echo "<p style='color:red;'>❌ Identifiants incorrects</p>";
-  }
+
+if ($admin && password_verify($password, $admin['Password_hash'])) {
+  $_SESSION['admin'] = $admin['ID_admin'];
+  header("Location: admin-dashboard.php");
+  exit();
+} else {
+  echo "<p style='color:red;'>❌ Identifiants incorrects</p>";
 }
+
+}
+  
 ?>
