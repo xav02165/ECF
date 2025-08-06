@@ -11,6 +11,7 @@
   <header>
     <nav class="container">
       <div class="logo">DXProCoaching</div>
+
       <input type="checkbox" id="menu-toggle" />
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <ul class="menu">
@@ -38,31 +39,35 @@
 
   </header>
 
-  <section id="presentation" class="container">
-    <img src="image/profil.jpg" alt="Photo coach" class="responsive-img" />
-    <div>
-      <h2>Coaching Musculation</h2>
-      <p>Spécialiste en renforcement physique et préparation de compétiteurs. Profites de plus de 30ans d'experiences!.</p>
-    </div>
-  </section>
+<?php
+include 'db.php';
+$stmt = $conn->query("SELECT * FROM presentation LIMIT 1");
+$presentation = $stmt->fetch();
+?>
 
-<div class="overlay-container">
-  <section class="ta-section">
-
-  <section id="services" class="services-grid">
-  <div class="service-box">
-    <h3>Coaching personnalisé</h3>
-    <p>Des plans sur mesure, adaptés à ton niveau, ton rythme et tes objectifs. Que ce soit prise de masse, sèche ou recomposition corporelle, je t’accompagne de A à Z.</p>
-  </div>
-  <div class="service-box">
-    <h3>Préparation compétition</h3>
-    <p>Sèche ciblée, posing, mental, nutrition stratégique, un coaching complet pour performer sur scène ou atteindre tes objectifs.</p>
-  </div>
-  <div class="service-box">
-    <h3>Suivi en ligne</h3>
-    <p>Accompagnement flexible à distance : check-ins hebdo, messagerie privée, conseils nutritifs et motivation constante, où que tu sois.</p>
+<section id="presentation" class="container">
+  <img src="<?= htmlspecialchars($presentation['image']) ?>" alt="Photo coach" class="responsive-img" />
+  <div>
+    <h2><?= htmlspecialchars($presentation['titre']) ?></h2>
+    <p><?= nl2br(htmlspecialchars($presentation['texte'])) ?></p>
   </div>
 </section>
+
+  <section id="services" class="services-grid">
+  <?php
+  require 'db.php'; // ton fichier de connexion PDO
+  $stmt = $conn->query("SELECT * FROM prestations");
+  while ($p = $stmt->fetch()) {
+    echo '<div class="service-box">';
+    echo '<h3>' . htmlspecialchars($p['titre']) . '</h3>';
+    echo '<p>' . nl2br(htmlspecialchars($p['description'])) . '</p>';
+    echo '</div>';
+  }
+  ?>
+</section>
+
+
+
 
 
   <section id="galerie" class="container grid gallery">
