@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-  header("Location: admin-login.php");
+  header("Location: ../admin/admin-login.php");
   exit();
 }
-require 'db.php';
+require '../admin/db.php';
 ?>
 
 
@@ -114,7 +114,7 @@ require 'db.php';
 <body>
 
 <div style="position: absolute; top: 20px; right: 20px;">
-  <a href="index.php" style="text-decoration: none; background: #007bff; color: white; padding: 8px 12px; border-radius: 5px;">
+  <a href="../Front/index.php" style="text-decoration: none; background: #007bff; color: white; padding: 8px 12px; border-radius: 5px;">
     ⬅️ Retour sur le site
   </a>
 
@@ -146,7 +146,7 @@ require 'db.php';
         $id = intval($_GET['delete']);
         $stmt = $conn->prepare("DELETE FROM prospect WHERE ID_prospect = ?");
         $stmt->execute([$id]);
-        header("Location: admin-dashboard.php?deleted=1");
+        header("Location: ../admin/admin-dashboard.php?deleted=1");
         exit;
     }
 
@@ -179,15 +179,15 @@ require 'db.php';
     </table>
 
     <div class="link-button">
-      <a href="admin-dashboard.php?page=presentation">📝 Modifier la présentation</a>
+      <a href="../admnin/admin-dashboard.php?page=presentation">📝 Modifier la présentation</a>
     </div><br>
 
     <div class="link-button">
-      <a href="admin-dashboard.php?page=prestations">Gérer les prestations</a>
+      <a href="../admin/admin-dashboard.php?page=prestations">Gérer les prestations</a>
     </div><br>
 
     <div class="link-button">
-      <a href="admin-dashboard.php?page=galerie">Gérer la galerie</a>
+      <a href="../admin/admin-dashboard.php?page=galerie">Gérer la galerie</a>
       </div>
 
 
@@ -195,22 +195,22 @@ require 'db.php';
     <?php
     $page = $_GET['page'] ?? 'home';
     if ($page === 'presentation') {
-        include 'edit-presentation.php';
+        include '../admin/edit-presentation.php';
     }
     ?>
     <?php
     $page = $_GET['page'] ?? 'home';
     if ($page === 'prestations') {
-    include 'manage-prestations.php';
+    include '../admin/manage-prestations.php';
     }
     ?>
     <?php
     if ($page === 'galerie') {
-  include 'manage-galerie.php';
+  include '../admin/manage-galerie.php';
 }
 ?>
 
-<form action="upload.php" method="POST" enctype="multipart/form-data" style="margin-bottom: 40px;">
+<form action="../admin/upload.php" method="POST" enctype="multipart/form-data" style="margin-bottom: 40px;">
   <label for="image">Choisir une image :</label><br>
   <input type="file" name="image" accept="image/*" required><br><br>
 

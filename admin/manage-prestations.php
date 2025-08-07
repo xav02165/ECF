@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '../admin/db.php';
 
 // AJOUT
 if (isset($_POST['add'])) {
@@ -14,7 +14,7 @@ if (isset($_GET['delete'])) {
   $id = intval($_GET['delete']);
   $stmt = $conn->prepare("DELETE FROM prestations WHERE id = ?");
   $stmt->execute([$id]);
-  header("Location: admin-dashboard.php?page=prestations");
+  header("Location: ../admin/admin-dashboard.php?page=prestations");
   exit;
 }
 
@@ -62,7 +62,7 @@ $prestations = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <td>
         <input type="hidden" name="id" value="<?= $p['id'] ?>">
         <button type="submit" name="update">💾 Modifier</button>
-        <a href="admin-dashboard.php?page=prestations&delete=<?= $p['id'] ?>" onclick="return confirm('Supprimer cette prestation ?')">🗑️ Supprimer</a>
+        <a href="../admin/admin-dashboard.php?page=prestations&delete=<?= $p['id'] ?>" onclick="return confirm('Supprimer cette prestation ?')">🗑️ Supprimer</a>
       </td>
     </form>
   </tr>

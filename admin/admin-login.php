@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php'; // Assure-toi que ce fichier contient la connexion PDO
+require '../admin/db.php'; // Assure-toi que ce fichier contient la connexion PDO
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $username = $_POST['username'];
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if ($admin && password_verify($password, $admin['Password_hash'])) {
   $_SESSION['admin'] = $admin['ID_admin'];
-  header("Location: admin-dashboard.php");
+  header("Location: ../admin/admin-dashboard.php");
   exit();
 } else {
   echo "<p style='color:red;'>❌ Identifiants incorrects</p>";

@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../admin/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $titre = $_POST['titre'];
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->execute([$titre, $texte, $image]);
 
   $_SESSION['updated'] = true;
-  header("Location: edit-presentation.php");
+  header("Location: ../admin/edit-presentation.php");
   exit;
 }
 

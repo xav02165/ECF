@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '../admin/db.php';
 
 // Vérifie si un fichier a été envoyé
 if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
@@ -22,7 +22,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
   $stmt->execute([$targetPath, $commentaire]);
 
   // Redirection
-  header("Location: index.php#galerie");
+  header("Location: ../Front/index.php#galerie");
   exit;
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require '../admin/db.php';
 
 // AJOUT
 if (isset($_POST['add'])) {
@@ -14,7 +14,7 @@ if (isset($_GET['delete'])) {
   $id = intval($_GET['delete']);
   $stmt = $conn->prepare("DELETE FROM galerie WHERE id = ?");
   $stmt->execute([$id]);
-  header("Location: admin-dashboard.php?page=galerie");
+  header("Location: ../admin/admin-dashboard.php?page=galerie");
   exit;
 }
 
@@ -58,7 +58,7 @@ $images = $stmt->fetchAll();
       <td>
         <input type="hidden" name="id" value="<?= $img['id'] ?>">
         <button type="submit" name="update">💾 Modifier</button>
-        <a href="admin-dashboard.php?page=galerie&delete=<?= $img['id'] ?>" onclick="return confirm('Supprimer cette image ?')">🗑️ Supprimer</a>
+        <a href="../admin/admin-dashboard.php?page=galerie&delete=<?= $img['id'] ?>" onclick="return confirm('Supprimer cette image ?')">🗑️ Supprimer</a>
       </td>
     </form>
   </tr>
